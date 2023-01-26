@@ -1,4 +1,12 @@
-# golang speech to text
+# Golang Speech To Text
+
+```diff
+- text in red
++ text in green
+! text in orange
+# text in gray
+@@ text in purple (and bold)@@
+```
 
 ## Run All in one
 ```sh
