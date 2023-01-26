@@ -1,6 +1,6 @@
 # Golang Speech To Text
 
-<a><img src="http://dump.thecybershadow.net/6c736bfd11ded8cdc5e2bda009a6694a/colortext.svg"/></a>
+<a><img src="https://raw.githubusercontent.com/anshumanpatil/golang-speech-to-text/master/readme.svg"/></a>
 
 ## Run All in one
 ```sh
