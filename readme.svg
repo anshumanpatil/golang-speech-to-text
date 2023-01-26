@@ -1,15 +1,26 @@
 <?xml version="1.0"?>
-<svg width="650" height="300" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+<svg width="650" height="425" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
  <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
  <g class="layer">
   <title>Layer 1</title>
-  <text fill="#0911f2" font-family="Monospace" font-size="14" id="svg_1" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="302.9" xml:space="preserve" y="74.5">git clone https://github.com/anshumanpatil/golang-speech-to-text.git</text>
-  <text fill="#0911f2" font-family="Monospace" font-size="14" id="svg_2" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="134.88" xml:space="preserve" y="89">cd golang-speech-to-text.git</text>
-  <text fill="#0911f2" font-family="Monospace" font-size="14" id="svg_3" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="101.27" xml:space="preserve" y="104">docker-compose up -d</text>
-  <text fill="#0911f2" font-family="Monospace" font-size="14" id="svg_4" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="63.47" xml:space="preserve" y="136">go mod tidy</text>
-  <text fill="#0911f2" font-family="Monospace" font-size="14" id="svg_5" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="134.88" xml:space="preserve" y="120">cd golang-speech-to-text.git</text>
-  <text fill="#0911f2" font-family="Monospace" font-size="14" id="svg_6" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="147.48" xml:space="preserve" y="152">pip install -r requirements.txt</text>
-  <text fill="#0911f2" font-family="Monospace" font-size="14" id="svg_7" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="118.07" xml:space="preserve" y="167.5">go run main.go -mode all</text>
-  <text fill="#e53475" font-family="Monospace" font-size="16" font-style="normal" font-weight="normal" id="svg_8" letter-spacing="0" stroke="#000000" stroke-width="0" text-anchor="middle" x="325.5" xml:space="preserve" y="26.5">Run All in one - Speech Recogniser[Python] and Text Parser[Golang]</text>
+  <text fill="#0911f2" font-family="Monospace" font-size="15" id="svg_1" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="313.32" xml:space="preserve" y="55">git clone https://github.com/anshumanpatil/golang-speech-to-text.git</text>
+  <text fill="#0911f2" font-family="Monospace" font-size="15" id="svg_2" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="133.29" xml:space="preserve" y="70">cd golang-speech-to-text.git</text>
+  <text fill="#0911f2" font-family="Monospace" font-size="15" id="svg_3" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="97.29" xml:space="preserve" y="85">docker-compose up -d</text>
+  <text fill="#0911f2" font-family="Monospace" font-size="15" id="svg_4" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="56.78" xml:space="preserve" y="115">go mod tidy</text>
+  <text fill="#0911f2" font-family="Monospace" font-size="15" id="svg_6" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="146.8" xml:space="preserve" y="100">pip install -r requirements.txt</text>
+  <text fill="#0911f2" font-family="Monospace" font-size="15" id="svg_7" stroke="#000000" stroke-width="0" text-anchor="middle" x="115.29" xml:space="preserve" y="130">go run main.go -mode all</text>
+  <text fill="#e53475" font-family="Monospace" font-size="16" font-style="normal" font-weight="normal" id="svg_8" letter-spacing="0" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="324.13" xml:space="preserve" y="26.5">Run All in one - Speech Recogniser[Python] and Text Parser[Golang]</text>
+  <text fill="#e53475" font-family="Monospace" font-size="16" font-style="normal" font-weight="normal" id="svg_10" letter-spacing="0" stroke="#000000" stroke-width="0" text-anchor="middle" x="117.69" xml:space="preserve" y="164.5">Run Python [Separately]</text>
+  <text fill="#0911f2" font-family="Monospace" font-size="15" id="svg_17" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="313.32" xml:space="preserve" y="185">git clone https://github.com/anshumanpatil/golang-speech-to-text.git</text>
+  <text fill="#0911f2" font-family="Monospace" font-size="15" id="svg_16" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="133.29" xml:space="preserve" y="200">cd golang-speech-to-text.git</text>
+  <text fill="#0911f2" font-family="Monospace" font-size="15" id="svg_15" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="97.29" xml:space="preserve" y="230">docker-compose up -d</text>
+  <text fill="#0911f2" font-family="Monospace" font-size="15" id="svg_12" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="146.8" xml:space="preserve" y="215">pip install -r requirements.txt</text>
+  <text fill="#0911f2" font-family="Monospace" font-size="15" id="svg_11" stroke="#000000" stroke-width="0" text-anchor="middle" x="83.79" xml:space="preserve" y="245">python3 speech.py</text>
+  <text fill="#e53475" font-family="Monospace" font-size="16" font-style="normal" font-weight="normal" id="svg_23" letter-spacing="0" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0) matrix(1 0 0 1 0 0)" x="98.49" xml:space="preserve" y="291.63">Run GO [Separately]</text>
+  <text fill="#0911f2" font-family="Monospace" font-size="14" id="svg_22" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="292.92" xml:space="preserve" y="320">git clone https://github.com/anshumanpatil/golang-speech-to-text.git</text>
+  <text fill="#0911f2" font-family="Monospace" font-size="14" id="svg_21" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="124.89" xml:space="preserve" y="335">cd golang-speech-to-text.git</text>
+  <text fill="#0911f2" font-family="Monospace" font-size="14" id="svg_20" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="91.29" xml:space="preserve" y="350">docker-compose up -d</text>
+  <text fill="#0911f2" font-family="Monospace" font-size="14" id="svg_19" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="53.48" xml:space="preserve" y="365">go mod tidy</text>
+  <text fill="#0911f2" font-family="Monospace" font-size="14" id="svg_18" stroke="#000000" stroke-width="0" text-anchor="middle" x="66.08" xml:space="preserve" y="380">go run main.go</text>
  </g>
 </svg>
