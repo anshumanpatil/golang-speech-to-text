@@ -3,33 +3,42 @@
 import time
 from kafka import KafkaProducer
 import speech_recognition as sr
-
+import json
 
 bootstrap_servers = ['localhost:9092']
 topicName = 'speech'
 producer = KafkaProducer(bootstrap_servers = bootstrap_servers)
 producer = KafkaProducer()
+def create_jsonlines(original):
+    if isinstance(original, str):
+        original = json.loads(original)
 
-def callback(recognizer, audio):
+    return '\n'.join([json.dumps(original[outer_key], sort_keys=True) 
+                      for outer_key in sorted(original.keys(), key=lambda x: int(x))])
+
+def process_audio(audio):
     try:
-        # print("Google Speech Recognition thinks you said " + recognizer.recognize_google(audio))
-        res = bytes(recognizer.recognize_google(audio), 'utf-8')
+        dest = r.recognize_google(audio, show_all=True)
+        y = json.dumps(dest)
+        res = bytes(str(y), 'utf-8')
         producer.send(topicName, res)
-        # metadata = ack.get()
-        # print("metadata.topic "+metadata.topic)
-        # print("metadata.partition "+str(metadata.partition))
-    except sr.UnknownValueError:
-        print("Google Speech Recognition could not understand audio")
-    except sr.RequestError as e:
-        print("Could not request results from Google Speech Recognition service; {0}".format(e))
-
+        print(y)
+    except Exception as e:
+        print("err "+str(e))
 
 r = sr.Recognizer()
-m = sr.Microphone()
-with m as source:
-    r.adjust_for_ambient_noise(source)
-    print("Started")
+m = sr.Microphone(0)
 
-stop_listening = r.listen_in_background(m, callback)
-for _ in range(50): time.sleep(0.1)  
-while True: time.sleep(0.1)  
+def ListenToVoice():
+    with m as source:
+        r.adjust_for_ambient_noise(source)
+        print("Speak")
+        print('\a')
+        audio = r.listen(m)
+        process_audio(audio)
+
+try:
+    while True:
+        ListenToVoice()
+except KeyboardInterrupt:
+    print('interrupted!')

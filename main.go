@@ -1,8 +1,13 @@
 package main
 
 import (
+	"bufio"
+	"encoding/json"
+	"flag"
 	"fmt"
+	"io"
 	"os"
+	"os/exec"
 	"os/signal"
 	"syscall"
 	"time"
@@ -10,21 +15,43 @@ import (
 	"github.com/confluentinc/confluent-kafka-go/kafka"
 )
 
-// {   'alternative': [{'confidence': 0.88687539, 'transcript': 'hello'}],
-//
-//	'final': True}
-
 type Possibility struct {
-	confidence float64
-	transcript string
+	Confidence float64 `json:"confidence"`
+	Transcript string  `json:"transcript"`
 }
 
 type Verb struct {
-	alternative []interface{}
-	final       interface{}
+	Alternative []Possibility `json:"alternative"`
+	Final       bool          `json:"final"`
 }
 
 func main() {
+	mode := flag.String("mode", "", "")
+	flag.Parse()
+
+	if mode != nil {
+		fmt.Println("mode = all: running speech recogniser!")
+		cmd := exec.Command("python3", "speech.py")
+		stdout, err := cmd.StdoutPipe()
+		if err != nil {
+			panic(err)
+		}
+		stderr, err := cmd.StderrPipe()
+		if err != nil {
+			panic(err)
+		}
+		err = cmd.Start()
+		if err != nil {
+			panic(err)
+		}
+		go copyOutput(stdout)
+		go copyOutput(stderr)
+
+		if *mode == "recogniser" {
+			return
+		}
+
+	}
 
 	m := kafka.ConfigMap{}
 	m["bootstrap.servers"] = "localhost:9092"
@@ -55,10 +82,24 @@ func main() {
 				continue
 			}
 			speech := string(ev.Value)
-			fmt.Println("string speech", speech)
+			spchVerb := Verb{}
+			errJson := json.Unmarshal([]byte(speech), &spchVerb)
+			if errJson != nil {
+				fmt.Println("errJson Value - ", speech)
+				continue
+			}
+			fmt.Println("Value - ", spchVerb)
+
 		}
 	}
 
 	c.Close()
 
+}
+
+func copyOutput(r io.Reader) {
+	scanner := bufio.NewScanner(r)
+	for scanner.Scan() {
+		fmt.Println(scanner.Text())
+	}
 }
