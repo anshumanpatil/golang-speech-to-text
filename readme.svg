@@ -3,6 +3,14 @@
  <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
  <g class="layer">
   <title>Layer 1</title>
-  <text fill="#0911f2" font-family="Monospace" font-size="10" id="svg_1" stroke="#000000" stroke-width="0" text-anchor="middle" x="249" xml:space="preserve" y="20.5">git clone https://github.com/anshumanpatil/golang-speech-to-text.git</text>
+  <text fill="#0911f2" font-family="Monospace" font-size="10" id="svg_1" stroke="#000000" stroke-width="0" text-anchor="middle" x="214.5" xml:space="preserve" y="51">git clone https://github.com/anshumanpatil/golang-speech-to-text.git</text>
+  <text fill="#0911f2" font-family="Monospace" font-size="10" id="svg_2" stroke="#000000" stroke-width="0" style="cursor: move;" text-anchor="middle" x="94.48" xml:space="preserve" y="66">cd golang-speech-to-text.git</text>
+  <text fill="#0911f2" font-family="Monospace" font-size="10" id="svg_3" stroke="#000000" stroke-width="0" style="cursor: move;" text-anchor="middle" x="70.47" xml:space="preserve" y="81">docker-compose up -d</text>
+  <text fill="#0911f2" font-family="Monospace" font-size="10" id="svg_4" stroke="#000000" stroke-width="0" style="cursor: move;" text-anchor="middle" x="43.47" xml:space="preserve" y="113">go mod tidy</text>
+  <text fill="#0911f2" font-family="Monospace" font-size="10" id="svg_5" stroke="#000000" stroke-width="0" text-anchor="middle" x="94.48" xml:space="preserve" y="97">cd golang-speech-to-text.git</text>
+  <text fill="#0911f2" font-family="Monospace" font-size="10" id="svg_6" stroke="#000000" stroke-width="0" style="cursor: move;" text-anchor="middle" x="103.48" xml:space="preserve" y="129">pip install -r requirements.txt</text>
+  <text fill="#0911f2" font-family="Monospace" font-size="10" id="svg_7" stroke="#000000" stroke-width="0" text-anchor="middle" x="82.48" xml:space="preserve" y="144.5">go run main.go -mode all</text>
+  <text fill="#e53475" font-family="Monospace" font-size="11" id="svg_8" stroke="#000000" stroke-width="0" text-anchor="middle" x="251.5" xml:space="preserve" y="21">Run All in one - Speech Recogniser[Python] and Text Parser[Golang]</text>
+  <line fill="none" id="svg_9" stroke="#000000" stroke-width="2" x1="1" x2="499" y1="33" y2="33"/>
  </g>
 </svg>

@@ -2,16 +2,6 @@
 
 <a><img src="https://raw.githubusercontent.com/anshumanpatil/golang-speech-to-text/master/readme.svg"/></a>
 
-## Run All in one
-```sh
-git clone https://github.com/anshumanpatil/golang-speech-to-text.git
-cd golang-speech-to-text.git
-docker-compose up -d
-go mod tidy
-pip install -r requirements.txt
-go run main.go -mode all
-```
-
 ## Run Python [Separately]
 ```sh
 git clone https://github.com/anshumanpatil/golang-speech-to-text.git
