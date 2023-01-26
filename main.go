@@ -6,9 +6,11 @@ import (
 	"flag"
 	"fmt"
 	"io"
+	"log"
 	"os"
 	"os/exec"
 	"os/signal"
+	"strings"
 	"syscall"
 	"time"
 
@@ -26,11 +28,22 @@ type Verb struct {
 }
 
 func main() {
+
 	mode := flag.String("mode", "", "")
 	flag.Parse()
 
+	v, err := verifyPythonVersion("3")
+	if err != nil {
+		log.Fatalf("Without python3 library won't work!!!")
+
+	}
+	if !strings.Contains(*v, "3") {
+		log.Fatalf("Without python3 library won't work!!!")
+	}
+
 	if mode != nil {
 		fmt.Println("mode = all: running speech recogniser!")
+
 		cmd := exec.Command("python3", "speech.py")
 		stdout, err := cmd.StdoutPipe()
 		if err != nil {
@@ -102,4 +115,25 @@ func copyOutput(r io.Reader) {
 	for scanner.Scan() {
 		fmt.Println(scanner.Text())
 	}
+}
+
+func verifyPythonVersion(v string) (*string, error) {
+	_, err := exec.LookPath("python" + v)
+	if err != nil {
+		// log.Fatalf("No python version located")
+		return nil, err
+	}
+	out, err := exec.Command("python"+v, "--version").CombinedOutput()
+	// log.Print(out)
+	if err != nil {
+		// log.Fatalf("Error checking Python version with the 'python' command: %v", err)
+		return nil, err
+	}
+	fields := strings.Fields(string(out))
+	if len(fields) > 0 {
+		version := fields[1]
+		log.Print(version)
+		return &version, nil
+	}
+	return nil, fmt.Errorf("No version found!!")
 }
