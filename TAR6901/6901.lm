@@ -1,0 +1,61 @@
+Language model created by QuickLM on Fri Jan 27 08:05:00 EST 2023
+Copyright (c) 1996-2010 Carnegie Mellon University and Alexander I. Rudnicky
+
+The model is in standard ARPA format, designed by Doug Paul while he was at MITRE.
+
+The code that was used to produce this language model is available in Open Source.
+Please visit http://www.speech.cs.cmu.edu/tools/ for more information
+
+The (fixed) discount mass is 0.5. The backoffs are computed using the ratio method.
+This model based on a corpus of 9 sentences and 11 words
+
+\data\
+ngram 1=11
+ngram 2=18
+ngram 3=9
+
+\1-grams:
+-0.7782 </s> -0.3010
+-0.7782 <s> -0.2218
+-1.7324 BLOCK -0.2218
+-1.7324 CREATE -0.2218
+-1.7324 ELSE -0.2218
+-1.7324 ENDIF -0.2218
+-1.7324 IF -0.2218
+-1.7324 MAP -0.2218
+-1.7324 STRING -0.2218
+-1.7324 STRUCT -0.2218
+-1.7324 WHERE -0.2218
+
+\2-grams:
+-1.2553 <s> BLOCK 0.0000
+-1.2553 <s> CREATE 0.0000
+-1.2553 <s> ELSE 0.0000
+-1.2553 <s> ENDIF 0.0000
+-1.2553 <s> IF 0.0000
+-1.2553 <s> MAP 0.0000
+-1.2553 <s> STRING 0.0000
+-1.2553 <s> STRUCT 0.0000
+-1.2553 <s> WHERE 0.0000
+-0.3010 BLOCK </s> -0.3010
+-0.3010 CREATE </s> -0.3010
+-0.3010 ELSE </s> -0.3010
+-0.3010 ENDIF </s> -0.3010
+-0.3010 IF </s> -0.3010
+-0.3010 MAP </s> -0.3010
+-0.3010 STRING </s> -0.3010
+-0.3010 STRUCT </s> -0.3010
+-0.3010 WHERE </s> -0.3010
+
+\3-grams:
+-0.3010 <s> BLOCK </s>
+-0.3010 <s> CREATE </s>
+-0.3010 <s> ELSE </s>
+-0.3010 <s> ENDIF </s>
+-0.3010 <s> IF </s>
+-0.3010 <s> MAP </s>
+-0.3010 <s> STRING </s>
+-0.3010 <s> STRUCT </s>
+-0.3010 <s> WHERE </s>
+
+\end\

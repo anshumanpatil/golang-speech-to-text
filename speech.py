@@ -1,44 +1,33 @@
-#!/usr/bin/env python3
+from pocketsphinx import LiveSpeech
+# from pocketsphinx import Decoder
+import os
+import pyaudio
+# http://www.speech.cs.cmu.edu/tools/lmtool-new.html
 
-import time
-from kafka import KafkaProducer
-import speech_recognition as sr
-import json
+# MODELDIR = "/Users/apple/projects/ai/pocketsphinx/model" 
+# DATADIR = "/Users/apple/projects/ai/pocketsphinx/data"
+def process_question(phrase):
+    # if str(phrase) == "hello":
+        # print(phrase, " User, How are you?")
 
-bootstrap_servers = ['localhost:9092']
-topicName = 'speech'
-producer = KafkaProducer(bootstrap_servers = bootstrap_servers)
-producer = KafkaProducer()
-def create_jsonlines(original):
-    if isinstance(original, str):
-        original = json.loads(original)
+    print(phrase)
 
-    return '\n'.join([json.dumps(original[outer_key], sort_keys=True) 
-                      for outer_key in sorted(original.keys(), key=lambda x: int(x))])
+speech = LiveSpeech(
+    sampling_rate=16000,  # optional
+    hmm='/Users/apple/Downloads/cmusphinx-en-in-8khz-5.2/en_in.cd_cont_5000',
+    lm='/Users/apple/Downloads/cmusphinx-en-in-8khz-5.2/en-us.lm.bin',
+    dic='/Users/apple/Downloads/cmusphinx-en-in-8khz-5.2/en_in.dic'
+)
+# speech = LiveSpeech(
+#     sampling_rate=16000,  # optional
+#     hmm='/Users/apple/projects/ai/pocketsphinx/model/en-us/en-us',
+#     lm='/Users/apple/Downloads/TAR6901/6901.lm',
+#     dic='/Users/apple/Downloads/TAR6901/6901.dic'
+# )
+for phrase in speech: 
+    # print(phrase.segments(detailed=True))
+    process_question(phrase)
 
-def process_audio(audio):
-    try:
-        dest = r.recognize_google(audio, show_all=True)
-        y = json.dumps(dest)
-        res = bytes(str(y), 'utf-8')
-        producer.send(topicName, res)
-        print(y)
-    except Exception as e:
-        print("err "+str(e))
 
-r = sr.Recognizer()
-m = sr.Microphone(0)
 
-def ListenToVoice():
-    with m as source:
-        r.adjust_for_ambient_noise(source)
-        print("Speak")
-        print('\a')
-        audio = r.listen(m)
-        process_audio(audio)
 
-try:
-    while True:
-        ListenToVoice()
-except KeyboardInterrupt:
-    print('interrupted!')
